@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="GBK" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.multipart.maxSize" value="8388608" />
+	<constant name="struts.multipart.saveDir" value="/export/data/chat_img" />
+	<constant name="struts.objectFactory.spring.autoWire" value="name" />
+	<constant name="struts.i18n.encoding" value="GBK" />
+	<constant name="struts.custom.i18n.resources" value="i18n/messages" />
+
+
+	<package name="struts-base" extends="struts-default">
+		<interceptors>
+			<interceptor-stack name="strutsDefaultStack">
+				<interceptor-ref name="exception" >
+					<param name="logEnabled">true</param>
+                  	<param name="logLevel">error</param>
+				</interceptor-ref>
+				<interceptor-ref name="alias" />
+				<interceptor-ref name="servletConfig" />
+				<interceptor-ref name="i18n" />
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="debugging" />
+				<interceptor-ref name="scopedModelDriven" />
+				<interceptor-ref name="modelDriven" />
+				<interceptor-ref name="fileUpload">
+					<param name="maximumSize">4194304</param>
+					<param name="allowedTypes">image/x-png,image/png,image/gif,image/jpeg,image/jpg,image/pjpeg,application/octet-stream</param>
+					<param name="allowedExtensions">jpg,jpeg,png,gif</param>
+				</interceptor-ref>
+				<interceptor-ref name="checkbox" />
+				<interceptor-ref name="multiselect" />
+				<interceptor-ref name="staticParams" />
+				<interceptor-ref name="actionMappingParams" />
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*</param>
+				</interceptor-ref>
+				<interceptor-ref name="conversionError" />
+				<interceptor-ref name="validation">
+					<param name="excludeMethods">input,back,cancel,browse</param>
+				</interceptor-ref>
+				<interceptor-ref name="workflow">
+					<param name="excludeMethods">input,back,cancel,browse</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="strutsDefaultStack" />
+	</package>
+	
+	<include file="struts-echo.xml" />
+	
+</struts>
