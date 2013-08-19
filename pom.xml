@@ -80,5 +80,6 @@
 	<modules>
 		<module>my-test-atom</module>
 		<module>my-test-cell</module>
+		<module>my-test-misc</module>
 	</modules>
 </project>
