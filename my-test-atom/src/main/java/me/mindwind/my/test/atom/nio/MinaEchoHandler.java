@@ -62,4 +62,10 @@ public class MinaEchoHandler implements IoHandler {
 		return rsp;
 	}
 
+	@Override
+	public void inputClosed(IoSession session) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
