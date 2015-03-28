@@ -21,12 +21,12 @@
 		<v.plugin.source>2.2</v.plugin.source>
 		<v.plugin.release>2.4</v.plugin.release>
 		<v.jdk>1.6</v.jdk>
-		
-		<v.lombok>0.12.1.craft</v.lombok>
+
+		<v.lombok>1.12.2</v.lombok>
 		<v.junit>4.8.2</v.junit>
 		<v.fastjson>1.1.36</v.fastjson>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -41,7 +41,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
